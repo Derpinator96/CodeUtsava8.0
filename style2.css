@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar{
+    list-style: none;
+    position: sticky;
+    background-color:rgba(255, 255, 255, 0.3);
+    font-size: 42px;
+    min-height: 70vh;
+    flex-direction: column;
+    justify-content: space-around;
+    backdrop-filter: blur(40px);
+    visibility: hidden;
+    
+    
+}
+
+.all{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+.hero{
+    min-height: 50vh;
+
+}
+#menu{
+    display: none;
+}
+
+#menu:checked ~ .sidebar{
+    visibility:visible;
+    display: inline-flex;
+    /* transition: linear 1s; */
+    /* transform: translate(10px); */
+    animation: appear 0.5s linear;
+}
+
+.menuButton{
+    visibility: visible;
+}
+
+@keyframes appear {
+
+from{
+    transform: translate(-100px)
+}
+
+to{
+    transform: translate(0px)
+}
+}
