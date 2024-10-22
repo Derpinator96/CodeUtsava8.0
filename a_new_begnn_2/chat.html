@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translucent Sidebar</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <script>
+        // Change the SVG icon when the checkbox is checked or unchecked
+        const toggleCheckbox = document.getElementById('sidebarToggle');
+        const menuIcon = document.getElementById('menuIcon');
+    
+        toggleCheckbox.addEventListener('change', () => {
+            if (toggleCheckbox.checked) {
+                menuIcon.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M15 9L9 14.9996M15 15L9 9.00039" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5" />
+                    </svg>`;
+            } else {
+                menuIcon.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M3 5H21M3 12H21M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>`;
+            }
+        });
+    </script>
+    
+    <input type="checkbox" id="sidebarToggle" class="sidebar-toggle">
+    <label for="sidebarToggle" class="toggle-label"><svg class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+        <path d="M4 5L14 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 12L20 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 19L20 19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></label>
+
+    <div class="sidebar appear">
+        <div class="sidebar-icons">
+            <!-- Icons that should appear before the sidebar is clicked -->
+            <span>&#x1F4DD;</span> <!-- Icon 1 (📝) -->
+            <span>&#x1F4C8;</span> <!-- Icon 2 (📈) -->
+            <span>&#x1F4D6;</span> <!-- Icon 3 (📖) -->
+            <span>&#x1F4E6;</span> <!-- Icon 4 (📦) -->
+        </div>
+        <div class="sidebar-buttons">
+            <!-- Buttons that should appear after the sidebar is clicked -->
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+            <button>Button 4</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Main Content</h1>
+        <p>This is the main content of the website. The sidebar will overlay this when opened.</p>
+    </div>
+</body>
+</html>
